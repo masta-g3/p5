@@ -1,0 +1,33 @@
+body {
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  background-color: lightblue;
+}
+h1{
+  font-family: "monospace";
+  font-size: 55px;
+}
+h2{
+  font-family: "monospace";
+  background-color: #FF0000;
+  color:#FFFFFF;
+  font-size:32px;
+  padding: 10px;
+}
+.subtitle{
+  font-family: "sans-serif";
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 1%;
+}
+.content{
+  font-family: "sans-serif";
+  font-size: 20px;
+  line-height: 2;
+  margin-left: 5%;
+  margin-right: 15%;
+}
+canvas {
+  margin:auto;
+}
