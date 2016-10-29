@@ -65,7 +65,7 @@ function setup() {
 	var header = new Markov(1, 10);
 	var paragraph = new Markov(1, min_length);
 
-	console.log('About to read sources.');
+	//console.log('About to read sources.');
 	loadJSON(sources_url, start);
 
 	// Generate news article.
@@ -79,7 +79,7 @@ function setup() {
 		}
 		p = createP(html_par.join(' '));
 		p.class('content');
-}, 1000);
+}, 2000);
 
 	// Function to read sources.
 	function start(sources) {
@@ -90,14 +90,18 @@ function setup() {
 	}
 	// Function to feed the model.
 	function loadData(data) {
-		for(var j=0; j<data.articles.length; j++) {
-			title = data.articles[j].title;
-			//console.log('About to feed title.');
-			header.feed(title);
-			content = data.articles[j].description;
-			if(content) {
-				if(content.length > 20) {
-					paragraph.feed(content);
+		if(data) {
+			for(var j=0; j<data.articles.length; j++) {
+				title = data.articles[j].title;
+				//console.log('About to feed title.');
+				if(title) {
+					header.feed(title);
+				}
+				content = data.articles[j].description;
+				if(content) {
+					if(content.length > 20) {
+						paragraph.feed(content);
+					}
 				}
 			}
 		}
