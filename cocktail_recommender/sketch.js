@@ -37,7 +37,7 @@ function dragended(d) {
 }
 function highlight(d, i) {
   d3.select(this)
-    .attr('fill', 'rgba(0, 0, 0, 1)')
+    .attr('fill', 'rgba(255, 255, 255, 1)')
     .attr('font-size', 12);
 }
 function deHighlight(d, i) {
@@ -89,17 +89,26 @@ d3.json('graph_new.json', function(error, graph) {
       .on('end', dragended));
 
   var label = svg.append('g')
-    .selectAll('.label')
+    .attr('class', 'label')
+    .selectAll('label')
     .data(graph.nodes)
     .enter().append('text')
-    .attr('class', '.label')
     .attr('text-anchor', 'right')
-    .attr('font-size', 8)
+    .attr('font-size', 9)
     .attr('font-family', 'sans-serif')
     .attr('fill', 'rgba(255, 255, 255, 0.50)')
     .text(function(d) { return d.id; })
     .on('mouseover', highlight)
     .on('mouseout', deHighlight);
+
+  node.on('mouseover', function(d) {
+    link.style('stroke-width', function(l) {
+      if (d == l.source || d == l.target) return 2;
+    });
+    //label.attr('font-size', function(l) {
+    //  console.log(l);
+    //});
+  });
 
   simulation
     .nodes(graph.nodes)
