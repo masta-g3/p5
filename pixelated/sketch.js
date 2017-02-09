@@ -8,14 +8,15 @@ function setup() {
   // Mode and canvas.
   var canvas = createCanvas(w, h);
   canvas.parent('sketch-holder');
+  canvas.position(windowWidth/2 - w/2, 150);
   pixelDensity(1);
   // Capture photo.
   capture = createCapture(VIDEO);
   capture.size(round(w/f), round(h/f));
   capture.hide();
   // Create circles.
-  for(var x=0; x<w/f; x++) {
-    for(var y=0; y<h/f; y++) {
+  for(var x=1; x<w/f; x++) {
+    for(var y=1; y<h/f; y++) {
       circles.push(new Circle(x, y));
     }
   }
