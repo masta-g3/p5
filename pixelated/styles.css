@@ -10,15 +10,23 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
   align-items: center;
 	background-color: rgb(255,245,245);
 }
 
 h1 {
+  text-align: center;
   font-family: 'bpdotsbold', monospace;
   font-size: 70px;
   color: rgb(100, 0, 0);
+}
+
+#sketch-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ref_img {
+  display: none;
 }

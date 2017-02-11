@@ -7,11 +7,16 @@ var f = 15;
 function setup() {
   // Mode and canvas.
   var canvas = createCanvas(w, h);
-  canvas.parent('sketch-holder');
-  canvas.position(windowWidth/2 - w/2, 150);
   pixelDensity(1);
-  // Capture photo.
-  capture = createCapture(VIDEO);
+  // Try to load webcam.
+  try {
+    capture = createCapture(VIDEO);
+    canvas.parent('sketch-holder');
+  } catch(err) {
+    error_msg = createP('Your current browser does not support webcam access. Please use either Chrome or Firefox.');
+    error_msg.parent('sketch-holder');
+    error_msg.style('font-family', 'monospace');
+  }
   capture.size(round(w/f), round(h/f));
   capture.hide();
   // Create circles.
