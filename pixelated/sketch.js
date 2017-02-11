@@ -9,8 +9,14 @@ function setup() {
   var canvas = createCanvas(w, h);
   pixelDensity(1);
   // Try to load webcam.
+  var constraints = {
+  audio: false,
+  video: {
+    facingMode: "user"
+  }
+};
   try {
-    capture = createCapture(VIDEO);
+    capture = createCapture(constraints);
     canvas.parent('sketch-holder');
   } catch(err) {
     error_msg = createP('Your current browser does not support webcam access. Please use either Chrome or Firefox.');
