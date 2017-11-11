@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-	background(111);
+	background(246);
 	image(img, width*0.8, height*0.8);
 	rec_square(width/2, height/2, width, toff);
 	toff += 0.01;
