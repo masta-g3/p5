@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
 	background(246);
-	tint(255, 160);
+	tint(255, 120);
 	image(img, width*0.6 + shift1, height*0.4 + shift2);
 	rec_square(width/2, height/2, width, toff);
 	toff += 0.01;
