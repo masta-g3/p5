@@ -1,6 +1,8 @@
 let toff = 0;
 let s = 0.4;
 let on = 0;
+let shift1 = 0;
+let shift2 = 0;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
