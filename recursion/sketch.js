@@ -16,7 +16,7 @@ function setup() {
 function draw() {
 	background(246);
 	tint(255, 40);
-	image(img, width*0.6 + shift1 + noise1, height*0.4 + shift2 + noise2);
+	image(img, width*0.6 + shift1 + noise1*10, height*0.4 + shift2 + noise2*10);
 	rec_square(width/2, height/2, width, toff);
 	toff += 0.01;
 	// Trigger random size.
