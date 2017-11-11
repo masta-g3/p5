@@ -3,6 +3,8 @@ let s = 0.4;
 let on = 0;
 let shift1 = 0;
 let shift2 = 0;
+let noise1 = 0;
+let noise2 = 0;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -14,7 +16,7 @@ function setup() {
 function draw() {
 	background(246);
 	tint(255, 120);
-	image(img, width*0.6 + shift1, height*0.4 + shift2);
+	image(img, width*0.6 + shift1 + noise1, height*0.4 + shift2 + noise2);
 	rec_square(width/2, height/2, width, toff);
 	toff += 0.01;
 	// Trigger random size.
