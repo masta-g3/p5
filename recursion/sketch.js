@@ -6,7 +6,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	rectMode(CENTER);
 	toff *= random() * 10;
-	img = loadImage("arrows.png");
+	img = loadImage("arrows.jpg");
 }
 
 function draw() {
