@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-	background(246);
+	background(146);
 	tint(255, 120);
 	image(img, width*0.6 + shift1 + noise1, height*0.4 + shift2 + noise2);
 	rec_square(width/2, height/2, width, toff);
