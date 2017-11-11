@@ -6,10 +6,12 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	rectMode(CENTER);
 	toff *= random() * 10;
+	img = loadImage("arrows.png");
 }
 
 function draw() {
 	background(255);
+	image(img, width*0.8, height*0.8);
 	rec_square(width/2, height/2, width, toff);
 	toff += 0.01;
 	// Trigger random size.
