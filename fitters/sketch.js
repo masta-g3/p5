@@ -109,7 +109,8 @@ class dataPoint {
 		strokeWeight(1);
 		stroke(0);
 		fill('#FF0077');
-		ellipse(x, y, 32, 32);
+		let sz = max(windowWidth, windowHeight) / 28;
+		ellipse(x, y, sz, sz);
 	}
 }
 
